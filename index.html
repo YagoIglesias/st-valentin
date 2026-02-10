@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ft">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>St Valentin</title>
+</head>
+<body>
+    <div class="content" id="contenedor">
+        <h1>Mi Reina, ¿ Quieres ser mi pareja para San Valentín ?</h1>
+        <div class="buttons-group">
+            <button type="button" class="YES" id="YES">OUI</button>
+            <button type="button" class="NON" id="NON">NON</button>
+        </div>
+    </div>
+    <img src="../stValentin/osito.gif" alt="Image" id="image">
+    <script>
+        const btnNon = document.getElementById("NON");
+        const contenedor = document.getElementById("contenedor");
+
+        btnNon.addEventListener("mouseover", () => {
+            const maxX = contenedor.clientWidth - btnNon.offsetWidth;
+            const maxY = contenedor.clientHeight - btnNon.offsetHeight;
+
+            const x = Math.random() * maxX;
+            const y = Math.random() * maxY;
+
+            btnNon.style.left = x + "px";
+            btnNon.style.top = y + "px";
+        });
+
+        const btnYes = document.getElementById("YES");
+        const image = document.getElementById("image");
+        
+        btnYes.addEventListener("click", () => {
+            contenedor.style.display = "none"; // Oculta la pregunta y los botones
+            image.style.display = "block";   // muestra el GIF
+        });
+    </script>
+
+</body>
+</html>
